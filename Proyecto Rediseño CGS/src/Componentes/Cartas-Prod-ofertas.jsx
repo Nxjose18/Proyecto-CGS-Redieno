@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../HojasDeEstilo/Cartas-Prod-ofertas.css';
+import carrito from '../Imagenes/carrito.png';
 
 function CartaProductosOfertas(props) {
 
@@ -16,11 +17,22 @@ function CartaProductosOfertas(props) {
   }
 
   return (
-    <div className='carta_producto'>
+    <div className='carta_oferta'>
       <div className="card">
 
-        {/* IMAGEN */}
-        <div className="card-img">
+        
+        <button 
+        className="card-img"
+          onClick={function() {
+            props.abrirModal({
+              imagen: props.imagen,
+              descripcion: props.descripcion,
+              precio: props.precio,
+              stock: props.stock,
+              etiquetas: props.etiquetas
+            });
+          }}
+        >
           <img src={props.imagen} alt="producto" />
 
           <div className="etiquetas">
@@ -28,14 +40,14 @@ function CartaProductosOfertas(props) {
               return <span key={index}>{item}</span>;
             })}
           </div>
-        </div>
+        </button>
 
-        {/* DESCRIPCIÓN */}
+      
         <div className='descripcion'>
           <p>{props.descripcion}</p>
         </div>
 
-        {/* BODY */}
+       
         <div className="card-body">
 
           <div className="precio">
@@ -46,7 +58,7 @@ function CartaProductosOfertas(props) {
             Stock: {props.stock}
           </div>
 
-          {/* CONTADOR */}
+         
           <div className="cantidad">
             <button onClick={disminuir}>-</button>
             <span>{cantidad}</span>
@@ -54,7 +66,8 @@ function CartaProductosOfertas(props) {
           </div>
 
           <button className="btn-agregar">
-            Agregar 🛒
+            Agregar 
+            <img src={carrito} alt="carrito" />            
           </button>
 
         </div>

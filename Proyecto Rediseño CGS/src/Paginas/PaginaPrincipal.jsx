@@ -1,17 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../HojasDeEstilo/PaginaPrincipal.css';
 import NavBar from '../Componentes/Nav-bar';
 import { Link } from "react-router-dom";
 import imagenPrincipal from '../Imagenes/img-principal.png';
-import categoriaP1 from '../Imagenes/CategoriaP-1.png';
-import categoriaP2 from '../Imagenes/CategoriaP-2.png';
-import categoriaP3 from '../Imagenes/CategoriaP-3.png';
+import novedad1 from '../Imagenes/imgNovedad-1.png';
+import novedad2 from '../Imagenes/imgNovedad-2.png';
+import novedad3 from '../Imagenes/imgNovedad-3.png';
+import categoriaP1 from '../Imagenes/Categoria-P1.png';
+import categoriaP2 from '../Imagenes/Categoria-P2.png';
+import categoriaP3 from '../Imagenes/Categoria-P3.png';
+import categoriaP4 from '../Imagenes/Categoria-P4.png';
 import iconolista from '../Imagenes/icono-lista.png';
-import monitor from '../Imagenes/CategoriaP-3.png';
+import monitor from '../Imagenes/imgNovedad-1.png';
 import CartaProductosExclusivos from '../Componentes/Cartas-Prod-exclusivo';
 import CartaProductosOfertas from '../Componentes/Cartas-Prod-ofertas';
+import CartaProductosNovedades from '../Componentes/Cartas-Prod-novedades';
 function PaginaPrincipal() {
 
+    var [modalAbierto, setModalAbierto] = useState(false);
+    var [productoSeleccionado, setProductoSeleccionado] = useState(null);
+    var [cantidadModal, setCantidadModal] = useState(1);
+    function aumentarCantidad() {
+      setCantidadModal(cantidadModal + 1);
+    }
+
+    function disminuirCantidad() {
+      if (cantidadModal > 1) {
+        setCantidadModal(cantidadModal - 1);
+      }
+    }
+    function abrirModal(producto) {
+      setProductoSeleccionado(producto);
+      setCantidadModal(1); 
+      setModalAbierto(true);
+    }
+    var novedades = [
+    {
+      imagen: novedad1,
+    },
+    {
+      imagen: novedad2,
+    },
+    {
+      imagen: novedad3,
+    }
+  ];
     var productos = [
     {
       imagen: monitor,
@@ -113,11 +146,15 @@ function PaginaPrincipal() {
           </div>
           <div className='categoria'>
             <p>categoria titulo</p>
-            <img src={categoriaP3} alt="" />
+            <img src={categoriaP3} alt="Categoria 3" />
+          </div>
+          <div className='categoria'>
+            <p>categoria titulo</p>
+            <img src={categoriaP4} alt="Categoria 4" />
           </div>
         </div>
       </section>
-      <section className='Seccion_catalogo'>
+      <section className='Seccion_catalogo' id='CatalogoProductos'>
         <div className='contenedor_componentes'>
             <h2 >Categorias:</h2>
             <ul>
@@ -151,13 +188,14 @@ function PaginaPrincipal() {
             <div className='carta_contenedor'>
               {productos.map(function(producto, index) {
                 return (
-                  <CartaProductosExclusivos
+                  <CartaProductosExclusivos 
                     key={index}
                     imagen={producto.imagen}
                     descripcion={producto.descripcion}
                     precio={producto.precio}
                     stock={producto.stock}
                     etiquetas={producto.etiquetas}
+                    abrirModal={abrirModal}
                   />
                 );
               })}
@@ -175,14 +213,69 @@ function PaginaPrincipal() {
                       precio={ofertas.precio}
                       stock={ofertas.stock}
                       etiquetas={ofertas.etiquetas}
+                      abrirModal={abrirModal}
                     />
                   );
                 })}
               </div>
           </div>
         </div>
-        <div className='contenedor_novedades'></div>
+        <div className='contenedor_novedades'>
+          <p>Novedades</p>
+          {novedades.map(function(novedades, index) {
+            return (
+              <CartaProductosNovedades
+                key={index}
+                imagen={novedades.imagen}
+              />
+            );
+          })}
+        </div>
       </section>
+      {modalAbierto && (
+        <div className="modal-overlay" onClick={() => setModalAbierto(false)}>
+          
+          <div 
+            className="modal-contenido"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className='NombreProd'>
+            <p>{productoSeleccionado.descripcion}</p>              
+            </div>
+            <div className='contenidoCentral'>
+              <div className='ImgProd'>
+                <img src={productoSeleccionado.imagen} alt="" />
+              </div>
+              <div className='PrecioProd'>
+                <p className='preciop'>S/ {productoSeleccionado.precio}</p>
+                <p className='cantidad'>{productoSeleccionado.stock} en stock</p>
+                <p>Con recargo de 5% adicional por pago con tarjeta de crédito/debito</p>
+                <div className="cantidad_modal">
+                  <button onClick={disminuirCantidad}>-</button>
+                  <span>{cantidadModal}</span>
+                  <button onClick={aumentarCantidad}>+</button>
+
+                  <button className="btn-carrito-modal">
+                    AÑADIR AL CARRO
+                  </button>
+                </div>
+              </div>              
+            </div>
+            <div className='ContenidoInferior'>
+              <div className='EspecificacionProd'>
+                <p>{productoSeleccionado.etiquetas}</p>
+              </div>
+              <div className='DescripcionProd'>
+                <p>{productoSeleccionado.descripcion}</p>
+              </div>              
+            </div>
+
+
+
+          </div>
+
+        </div>
+      )}
       </main>
           
   );

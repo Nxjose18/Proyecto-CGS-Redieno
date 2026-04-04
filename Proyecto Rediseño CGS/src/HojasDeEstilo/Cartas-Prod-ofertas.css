@@ -1,10 +1,10 @@
-.carta_producto, .carta_oferta{
+.carta_oferta{
   width: 100%;
-  height: 326px;
+  height: clamp(200px, 35vh, 330px);
   justify-content: center;
   align-items: center;
   background-color: #cfd3e6;
-  border-radius: 10px;
+  border-radius: 15px;
   display: inline-block;
 }
 
@@ -26,8 +26,13 @@
     position: relative;
     background: #eaeaea;
     height: 64%;
+    border: none;
 }
-
+.card-img:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
 .card-img img {
     width: 100%;
     height: 100%;
@@ -114,11 +119,19 @@
 /* BOTÓN */
 .btn-agregar {
     width: 100%;
-    height: 40px;
+    height: 75%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;    
+    align-items: center;
     background: #DAC0F6;
     border: none;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.233);
+}
+.btn-agregar img{
+    width: auto;
+    height: 30px;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../HojasDeEstilo/Cartas-Prod-exclusivo.css';
+import carrito from '../Imagenes/carrito.png';
 
 function CartaProductosExclusivos(props) {
 
@@ -17,44 +18,56 @@ function CartaProductosExclusivos(props) {
 
   return (
     <div className='carta_producto'>
-      <div className="card">
+      <div className="card_exclusivo">
 
-        {/* IMAGEN */}
-        <div className="card-img">
+       
+        <button 
+              className="card-img-exclusivo"
+              onClick={function() {
+                props.abrirModal({
+                  imagen: props.imagen,
+                  descripcion: props.descripcion,
+                  precio: props.precio,
+                  stock: props.stock,
+                  etiquetas: props.etiquetas
+                });
+              }}
+            >
           <img src={props.imagen} alt="producto" />
 
-          <div className="etiquetas">
+          <div className="etiquetas_Pexclusivo">
             {props.etiquetas.map(function(item, index) {
               return <span key={index}>{item}</span>;
             })}
           </div>
-        </div>
+        </button>
 
-        {/* DESCRIPCIÓN */}
-        <div className='descripcion'>
+        
+        <div className='descripcion_exclusivo'>
           <p>{props.descripcion}</p>
         </div>
 
-        {/* BODY */}
-        <div className="card-body">
+   
+        <div className="card-body-exclusivo">
 
-          <div className="precio">
+          <div className="precio_exclusivo">
             S/ {props.precio}
           </div>
 
-          <div className="stock">
+          <div className="stock_exclusivo">
             Stock: {props.stock}
           </div>
 
-          {/* CONTADOR */}
-          <div className="cantidad">
+      
+          <div className="cantidad_exclusivo">
             <button onClick={disminuir}>-</button>
             <span>{cantidad}</span>
             <button onClick={aumentar}>+</button>
           </div>
 
-          <button className="btn-agregar">
-            Agregar 🛒
+          <button className="btn-agregar-exclusivo">
+            Agregar 
+            <img src={carrito} alt="carrito" />
           </button>
 
         </div>

@@ -139,7 +139,7 @@
   transform: translateY(-2px);
 }
 
-/* 🔥 PANEL CARRITO */
+
 .panel-carrito {
   position: absolute;
   right: 20px;
@@ -222,6 +222,10 @@
 .carrito-total {
   margin-top: 10px;
   text-align: right;
+}
+.lista-categorias a {
+  text-decoration: none;
+  color: inherit;
 }
 /* RESPONSIVE */
 @media (max-width: 768px) {

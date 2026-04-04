@@ -1,3 +1,5 @@
+
+import { HashLink as Link } from 'react-router-hash-link';
 import React, { useState } from 'react';
 import '../HojasDeEstilo/Nav-bar.css';
 import Logo from '../Imagenes/logo.png';
@@ -156,17 +158,26 @@ function NavBar() {
         </div>
       )}
 
-      {/* CATEGORÍAS */}
+
       <div className="barra-categorias">
         <ul className="lista-categorias">
-          <li className="categoria">OFERTAS</li>
-          <li className="categoria">PC GAMER</li>
-          <li className="categoria">PC OFICINA</li>
-          <li className="categoria">CATÁLOGO</li>
+          <li className="categoria">
+            <Link smooth to="/#CatalogoProductos">Ofertas</Link>
+          </li>          
+          <li className="categoria">
+            <Link smooth to="/#CatalogoProductos">Catalogo</Link>
+          </li>          
+          <li className="categoria">
+            <Link to="/carta">PC Gamer</Link>
+          </li>
+          <li className="categoria">
+            <Link to="/carta">PC Oficina</Link>
+          </li>
+
         </ul>
       </div>
 
-      {/* DESCUENTO */}
+
       <div className="contenedor_descuento">
         <button className='boton_descuento'>TOP 30% DE DESCUENTO EN</button>
         <button className='boton_descuento'>TOP 30% DE DESCUENTO EN</button>
