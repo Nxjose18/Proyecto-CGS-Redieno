@@ -1,0 +1,236 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER GENERAL */
+.header {
+  width: 100%;
+  min-height: 138px;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* BARRA SUPERIOR */
+.contenedor_descuento{
+  background-color: #395EF2;
+  display: flex;
+  text-align: center;
+}
+.boton_descuento{
+    color: white;
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+}
+.boton_descuento:hover{
+    background-color: #5d17ff;
+    cursor: pointer;
+}
+.boton_descuento:active{
+    background-color: #5c6cff;
+}
+/* CONTENEDOR PRINCIPAL */
+.contenedor-header {
+  background-color: #2d2f37;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* LOGO */
+.contenedor-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: auto;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* BUSCADOR */
+.contenedor-buscador {
+  display: flex;
+  width: 40%;
+  background: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-buscador {
+  flex: 1;
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.boton-buscar {
+  background-color: #5c6cff;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+/* ACCIONES */
+.contenedor-acciones {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.accion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 50px;
+}
+
+.icono {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.iconobuscar{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+
+/* BARRA CATEGORÍAS */
+.barra-categorias {
+  background-color: #3C51A6;
+}
+
+
+.lista-categorias {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 12px 0;
+}
+
+.categoria {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.barra-categorias:hover {
+  background-color: #5d17ff;
+}
+.categoria:hover {
+  color: #b9c7ff;
+  transform: translateY(-2px);
+}
+
+/* 🔥 PANEL CARRITO */
+.panel-carrito {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+
+  width: 500px;
+  background-color: #2d2f37;
+  color: white;
+
+  border-radius: 10px;
+  padding: 15px;
+  z-index: 2000;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* HEADER */
+.carrito-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  background-color: #395EF2;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ITEM */
+.carrito-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* INFO PRODUCTO */
+.producto-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.producto-info img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* CANTIDAD */
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cantidad button {
+  background-color: #5c6cff;
+  border: none;
+  color: white;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ELIMINAR */
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+.btn-eliminar img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* TOTAL */
+.carrito-total {
+  margin-top: 10px;
+  text-align: right;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contenedor-buscador {
+    width: 50%;
+  }
+
+  .barra-superior {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+}

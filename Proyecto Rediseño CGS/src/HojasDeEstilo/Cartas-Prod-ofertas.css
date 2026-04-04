@@ -1,0 +1,124 @@
+.carta_producto, .carta_oferta{
+  width: 100%;
+  height: 326px;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfd3e6;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* TARJETA */
+.card {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* IMAGEN */
+.card-img {
+    position: relative;
+    background: #eaeaea;
+    height: 64%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ETIQUETAS LATERALES */
+.etiquetas {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.etiquetas span {
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* BODY */
+.card-body {
+    height: 30%;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.descripcion {
+    font-size: 12px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #1624eb3d;
+}
+
+/* PRECIO */
+.precio {
+    background: #00e5a8;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-size: 15px;
+}
+
+/* STOCK */
+.stock {
+    background: #00e5a8;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-size: 15px;
+}
+
+/* CONTADOR */
+.cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.cantidad button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background: purple;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* BOTÓN */
+.btn-agregar {
+    width: 100%;
+    height: 40px;
+    background: #DAC0F6;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.233);
+}

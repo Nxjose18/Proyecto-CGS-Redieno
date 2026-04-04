@@ -1,0 +1,218 @@
+.main_principal{
+    height: 100vh;
+    width: 100%;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+/* 2. El fondo de la barra (Track) */
+::-webkit-scrollbar-track {
+  background: #8484e70a; 
+  border-radius: 10px;
+}
+
+/* 3. La parte que se mueve (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #5f54c091; 
+  border-radius: 10px;
+}
+
+/* 4. Cuando pasas el mouse sobre la barra */
+::-webkit-scrollbar-thumb:hover {
+  background: #1624eb; 
+  cursor: pointer;
+  width: 7px;
+}
+
+/* SECCIÓN PRINCIPAL */
+.seccion_principal {
+  height: calc(100vh - 138px);
+  width: 100%;
+  padding: 12px 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.imagen-principal {
+  background-color: #cfd3e6;
+  border-radius: 25px;
+  padding: 15px 25px;
+  height: 60%;
+}
+
+.titulo-principal {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2d2f37;
+  margin-bottom: 10px;
+  height: 5%;
+}
+
+.imagen-principal img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+
+
+.categorias_principales {
+  background-color: #cfd3e6;
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  height: 39%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CARD INDIVIDUAL */
+.categoria {
+  flex: 1;
+  text-align: center;
+  width: 20%;
+}
+/* TITULO DE CADA CARD */
+.categoria p {
+  font-weight: bold;
+  color: #16163F;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* IMAGEN */
+.categoria img {
+  width: auto;
+  height: 85%;
+  object-fit: cover;
+  border-radius: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+/* HOVER */
+.categoria img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+/*Catalogo*/
+.Seccion_catalogo{
+  height: calc(100vh - 136px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  
+}
+.contenedor_componentes{
+  width: 18%;
+  height: 95%;
+  background-color: #E3E5FA;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
+    overflow-y: auto;
+  overflow-x: hidden;
+}
+.contenedor_componentes ul{
+  height: 100%;
+  width: 80%;
+  padding: 10px;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.contenedor_componentes ul li{
+  width: 100%;
+  border: #1f31d411 solid 1px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.contenedor_componentes ul li a{
+  color: #16163F;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contenedor_ProductosYofertas{
+  width: 60%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.productos_contenedor, .ofertas_contenedor{
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  background-color: #E3E5FA;
+  box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+} 
+
+.carta_contenedor{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.carta_producto, .carta_oferta{
+  width: 100%;
+  height: 325px;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfd3e6;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+
+.contenedor_novedades{
+  width: 18%;
+  height: 95%;
+  border-radius: 10px;
+  background-color: #E3E5FA;
+  box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
+}
+
+@media (max-width: 768px) {
+  .seccion_principal {
+    padding: 20px;
+  }
+
+  .categorias_principales {
+    flex-direction: column;
+  }
+
+  .imagen-principal img {
+    height: 200px;
+  }
+}
