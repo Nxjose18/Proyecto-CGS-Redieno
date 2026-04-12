@@ -10,9 +10,9 @@
     padding: 10px;
     gap: 10px;
 }
-.contenedor_componentes{
+.contenedor_componentess{
   width: 18%;
-  height: 95%;
+  height: 100%;
   background-color: #E3E5FA;
   border-radius: 10px;
   display: flex;
@@ -25,9 +25,9 @@
     overflow-y: auto;
   overflow-x: hidden;
 }
-.contenedor_componentes ul{
+.contenedor_componentess ul{
   height: 100%;
-  width: 80%;
+  width: 95%;
   padding: 10px;
   text-decoration: none;
   list-style: none;
@@ -35,13 +35,13 @@
   flex-direction: column;
   gap: 25px;
 }
-.contenedor_componentes ul li{
+.contenedor_componentess ul li{
   width: 100%;
   border: #1f31d411 solid 1px;
   border-radius: 10px;
   padding: 5px 10px;
 }
-.contenedor_componentes ul li a{
+.contenedor_componentess ul li a{
   color: #16163F;
   font-size: 18px;
   text-decoration: none;
@@ -49,61 +49,22 @@
 }
 .Listaprod{
     width: 82%;
-    height: 95%;
+    height: 100%;
     background-color: #E3E5FA;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
+    gap: 15px;
     padding: 15px;
     box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.carta_Lista{
-    width: 90%;
-    height: 320px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
-    display: flex;
-    flex-direction: column;
-}
-.carta_Lista:hover{
-    transform: scale(1.03);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.caja_img{
-    width: 100%;
-    height: 70%;
-    overflow: hidden;
-    border: none;
-}
-.caja_img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-.caja_info{
-    height: 15%;
-    width: 100%;
-    text-align: center;
-}
-.caja_acciones{
-    height: 15%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px;
-    background-color: #F4F3FF;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-.caja_acciones img{
-    width: 20px;
-    height: 20px;
+
+
+@media (min-width: 1024px) {
+  .contenedor_componentess ul li a{
+    font-size: 13px;
+  }
 }

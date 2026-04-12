@@ -1,0 +1,234 @@
+.carta_Lista{
+    width: 90%;
+    height: clamp(170px, 35vh, 400px);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
+    display: flex;
+    flex-direction: column;
+}
+.carta_Lista:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.caja_img{
+    width: 100%;
+    max-height: 70%;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.caja_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.caja_info{
+    height: 18%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+.caja_info_titulo{
+    font-size: 12px;
+}
+.caja_info_precio{
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.caja_acciones{
+    height: 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    background-color: #F4F3FF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.caja_acciones img{
+    width: 20px;
+    height: 20px;
+}
+.etiquetas_PcGamer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.etiquetas_PcGamer span {
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.caja_acciones span{
+    font-size: 18px;
+    background-color: #C9C4F2;
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.caja_acciones_comprar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px rgba(30, 29, 31, 0.219);
+  background-color: #DAC0F6;
+  padding: 5px;
+  }
+.caja_acciones_disminuir{
+  font-weight: bold;
+  color: white;
+  background-color: #A77EED;
+  border: none;
+  padding: 1px;
+  width: 24px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.caja_acciones_aumentar{
+  font-weight: bold;
+  color: white;
+  background-color: #A77EED;
+  border: none;
+  padding: 1px;
+  width: 24px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/*MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  border-radius: 10px;
+  height: 50vh;
+  width: 35%;
+}
+
+.NombreProd{
+  width: 100%;
+  height: 10%;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #DBE3FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenidoCentral{
+  width: 100%;
+  height: 65%;
+  display: flex;
+}
+.ImgProd{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.ImgProd img{
+  width: 85%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(30, 29, 31, 0.219);
+}
+.PrecioProd{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;  
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.preciop{
+ font-size: 30px;
+ color: red;
+}
+.cantidad{
+ font-size: 20px;
+ color: #1624eb;
+}
+.ContenidoInferior{
+  width: 100%;
+  height: 25%;
+  display: flex;
+}
+.EspecificacionProd{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #0033ff1a;
+  border-right: #2d2f372d solid 1px;
+}
+.DescripcionProd{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #0033ff1a;
+}
+.cantidad_modal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cantidad_modal button {
+  padding: 5px 10px;
+  border: none;
+  background: #A77EED;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cantidad_modal span {
+  padding: 5px 15px;
+  background: #C9C4F2;
+  border-radius: 10px;
+}
+
+.btn-carrito-modal {
+  margin-left: 15px;
+  background: #a78bfa;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../HojasDeEstilo/PaginaPrincipal.css';
 import NavBar from '../Componentes/Nav-bar';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../context/CarritoContext";
 import imagenPrincipal from '../Imagenes/img-principal.png';
 import novedad1 from '../Imagenes/imgNovedad-1.png';
 import novedad2 from '../Imagenes/imgNovedad-2.png';
@@ -20,6 +22,7 @@ function PaginaPrincipal() {
     var [modalAbierto, setModalAbierto] = useState(false);
     var [productoSeleccionado, setProductoSeleccionado] = useState(null);
     var [cantidadModal, setCantidadModal] = useState(1);
+    const { agregarProducto } = useContext(CarritoContext);
     function aumentarCantidad() {
       setCantidadModal(cantidadModal + 1);
     }
@@ -33,6 +36,18 @@ function PaginaPrincipal() {
       setProductoSeleccionado(producto);
       setCantidadModal(1); 
       setModalAbierto(true);
+    }
+    function agregarAlCarrito() {
+
+    const producto = {
+      id: Date.now(), // id único simple
+      nombre: productoSeleccionado.descripcion,
+      precio: productoSeleccionado.precio,
+      cantidad: cantidadModal,
+      imagen: productoSeleccionado.imagen
+    };
+
+      agregarProducto(producto);
     }
     var novedades = [
     {
@@ -156,7 +171,7 @@ function PaginaPrincipal() {
       </section>
       <section className='Seccion_catalogo' id='CatalogoProductos'>
         <div className='contenedor_componentes'>
-            <h2 >Categorias:</h2>
+            <p>Categorias:</p>
             <ul>
               <li><a href="#procesadores">
                 <img src={iconolista} alt="lista"/>PROCESADORES</a></li>
@@ -255,7 +270,7 @@ function PaginaPrincipal() {
                   <span>{cantidadModal}</span>
                   <button onClick={aumentarCantidad}>+</button>
 
-                  <button className="btn-carrito-modal">
+                  <button className="btn-carrito-modal" onClick={agregarAlCarrito}>
                     AÑADIR AL CARRO
                   </button>
                 </div>

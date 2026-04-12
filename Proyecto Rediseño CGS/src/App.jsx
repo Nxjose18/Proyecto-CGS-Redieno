@@ -1,4 +1,5 @@
 import './App.css'
+import CarritoProvider from "./context/CarritoContext";
 import { Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./Paginas/PaginaPrincipal";
 import PaginaLista from "./Paginas/PaginaLista";
@@ -6,6 +7,7 @@ import PaginaLista from "./Paginas/PaginaLista";
 function App() {
   return (
     <div className="App">
+      <CarritoProvider>
       <Routes>
         <Route 
           path="/" 
@@ -17,6 +19,7 @@ function App() {
           element={<PaginaLista />} 
         />
       </Routes>
+      </CarritoProvider>
     </div>
   );
 }

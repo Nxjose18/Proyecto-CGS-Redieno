@@ -1,10 +1,122 @@
 
 import '../HojasDeEstilo/PaginaLista.css';
+import React, { useState } from 'react';
 import iconolista from '../Imagenes/icono-lista.png';
 import NavBar from '../Componentes/Nav-bar';
-import productoimg from '../Imagenes/Producto-1.jpg';
-import carrito from '../Imagenes/carrito.png';
+import CartasPcGamer from '../Componentes/cartas-PcGamer';
+import pcgamer1 from '../Imagenes/pcGamer-1.jpg';
+import pcgamer2 from '../Imagenes/pcGamer-2.jpg';
+import pcgamer3 from '../Imagenes/pcGamer-3.jpg';
 function PaginaLista() {
+  var [modalAbierto, setModalAbierto] = useState(false);
+  var [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  var [cantidadModal, setCantidadModal] = useState(1);
+
+  function aumentarCantidad() {
+    setCantidadModal(cantidadModal + 1);
+  }
+
+  function disminuirCantidad() {
+    if (cantidadModal > 1) {
+      setCantidadModal(cantidadModal - 1);
+    }
+  }
+  function abrirModal(producto) {
+    setProductoSeleccionado(producto);
+    setCantidadModal(1); 
+    setModalAbierto(true);
+  }
+  var pcgamers = [
+    {
+      imagen: pcgamer1,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Ryzen", "120Hz", "RXT"]
+    },
+    {
+      imagen: pcgamer2,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Ryzen", "120Hz", "RXT"]
+
+    },
+    {
+      imagen: pcgamer3,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Ryzen", "120Hz", "RXT"]
+    },
+    {
+      imagen: pcgamer1,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Ryzen", "120Hz", "RXT"]
+
+    },
+    {
+      imagen: pcgamer2,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+    },
+    {
+      imagen: pcgamer3,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+    },
+    {
+      imagen: pcgamer1,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+    },
+    {
+      imagen: pcgamer2,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+    },
+    {
+      imagen: pcgamer3,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+
+    },
+    {
+      imagen: pcgamer1,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+
+    },
+    {
+      imagen: pcgamer2,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+    },
+    {
+      imagen: pcgamer3,
+      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
+      precio: "S/ 3499",
+      stock: 3,
+      etiquetas: ["Intel", "130Hz", "RX"]
+
+    }
+  ];
 
   return (
   
@@ -12,7 +124,7 @@ function PaginaLista() {
           <NavBar />        
         <section className='Lista'>
 
-          <div className='contenedor_componentes'>
+          <div className='contenedor_componentess'>
                       <h2 >Categorias:</h2>
                       <ul>
                         <li><a href="#procesadores">
@@ -40,36 +152,61 @@ function PaginaLista() {
                       </ul>
                   </div>
                   <div className='Listaprod'>
-                       <div className='carta_Lista'>
-                        <button className='caja_img'>
-                        <img src={productoimg} alt="Producto 1" />                          
-                        </button>
-                        <div className='caja_info'>
-                          <p>Monitor 19"</p>
-                          <p>s/ 1380</p>
-                        </div>
-                        <div className='caja_acciones'>
-                           <button>Comprar
-                            <img src={carrito} alt="" />
-                           </button>
-                           <button>-</button>
-                            <span>0</span>
-                           <button>+</button>
-                           <p>3 en stock</p>
-                        </div>
-                       </div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
-                       <div className='carta_Lista'></div>
+                   {pcgamers.map(function(pcgamer, index) {
+                      return (
+                        <CartasPcGamer 
+                          key={index}
+                          imagen={pcgamer.imagen}
+                          titulo={pcgamer.titulo}
+                          precio={pcgamer.precio}
+                          stock={pcgamer.stock}
+                          etiquetas={pcgamer.etiquetas}
+                          abrirModal={abrirModal}
+                        />
+                      );
+                    })}
                   </div>
         </section>
+        {modalAbierto && (
+        <div className="modal-overlay" onClick={() => setModalAbierto(false)}>
+          
+          <div 
+            className="modal-contenido"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className='NombreProd'>
+            <p>{productoSeleccionado.titulo}</p>              
+            </div>
+            <div className='contenidoCentral'>
+              <div className='ImgProd'>
+                <img src={productoSeleccionado.imagen} alt="" />
+              </div>
+              <div className='PrecioProd'>
+                <p className='preciop'>{productoSeleccionado.precio}</p>
+                <p className='cantidad'>{productoSeleccionado.stock} en stock</p>
+                <p>Con recargo de 5% adicional por pago con tarjeta de crédito/debito</p>
+                <div className="cantidad_modal">
+                  <button onClick={disminuirCantidad}>-</button>
+                  <span>{cantidadModal}</span>
+                  <button onClick={aumentarCantidad}>+</button>
+
+                  <button className="btn-carrito-modal">
+                    AÑADIR AL CARRO
+                  </button>
+                </div>
+              </div>              
+            </div>
+            <div className='ContenidoInferior'>
+              <div className='EspecificacionProd'>
+                <p>{productoSeleccionado.etiquetas}</p>
+              </div>
+              <div className='DescripcionProd'>
+                <p>{productoSeleccionado.titulo}</p>
+              </div>              
+            </div>
+          </div>
+        </div>
+      )}
       </main>
   );
 }
