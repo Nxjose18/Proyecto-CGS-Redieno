@@ -1,72 +1,23 @@
 
 import { HashLink as Link } from 'react-router-hash-link';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../HojasDeEstilo/Nav-bar.css';
 import Logo from '../Imagenes/logo.png';
 import iconoUsuario from '../Imagenes/usuario.png';
 import iconoCarrito from '../Imagenes/carrito.png';
 import iconoBuscar from '../Imagenes/buscar.png';
 import iconoeliminar from '../Imagenes/icono-tacho.png';
+import { CarritoContext } from '../context/CarritoContext';
 
 function NavBar() {
-
- 
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
-
-  const [carrito, setCarrito] = useState([
-    {
-      id: 1,
-      nombre: "Monitor Gamer Halion 27",
-      precio: 3499,
-      cantidad: 1,
-      imagen: Logo
-    },
-    {
-      id: 2,
-      nombre: "Teclado Gamer",
-      precio: 3499,
-      cantidad: 2,
-      imagen: Logo
-    }
-  ]);
-
-
-  function aumentarCantidad(id) {
-    const nuevo = carrito.map(function(p) {
-      if (p.id === id) {
-        return { ...p, cantidad: p.cantidad + 1 };
-      }
-      return p;
-    });
-    setCarrito(nuevo);
-  }
-
-  function disminuirCantidad(id) {
-    const nuevo = carrito.map(function(p) {
-      if (p.id === id && p.cantidad > 1) {
-        return { ...p, cantidad: p.cantidad - 1 };
-      }
-      return p;
-    });
-    setCarrito(nuevo);
-  }
-
-  function eliminarProducto(id) {
-    const nuevo = carrito.filter(function(p) {
-      return p.id !== id;
-    });
-    setCarrito(nuevo);
-  }
-
-  function calcularTotal() {
-    let total = 0;
-
-    carrito.forEach(function(p) {
-      total = total + (p.precio * p.cantidad);
-    });
-
-    return total;
-  }
+  const {
+    carrito,
+    aumentarCantidad,
+    disminuirCantidad,
+    eliminarProducto,
+    calcularTotal
+  } = useContext(CarritoContext);
 
   
   return (
@@ -105,6 +56,7 @@ function NavBar() {
           >
             <span>Carrito</span>
             <img src={iconoCarrito} alt="carrito" className="icono" />
+            <span>{carrito.length}</span>
           </div>
 
         </div>
@@ -121,35 +73,39 @@ function NavBar() {
             <p>Total</p>
           </div>
 
-          {carrito.map(function(p) {
-            return (
-              <div key={p.id} className="carrito-item">
+          {carrito.length === 0 ? (
+            <p className="carrito-vacio">Tu carrito está vacío.</p>
+          ) : (
+            carrito.map(function(p) {
+              return (
+                <div key={p.id} className="carrito-item">
 
-                <div className="producto-info">
-                  <img src={p.imagen} alt="" />
-                  <span>{p.nombre}</span>
+                  <div className="producto-info">
+                    <img src={p.imagen} alt={p.nombre} />
+                    <span>{p.nombre}</span>
+                  </div>
+
+                  <p>S/. {p.precio}</p>
+
+                  <div className="cantidad">
+                    <button onClick={function() { disminuirCantidad(p.id) }}>-</button>
+                    <span>{p.cantidad}</span>
+                    <button onClick={function() { aumentarCantidad(p.id) }}>+</button>
+                  </div>
+
+                  <p>S/. {p.precio * p.cantidad}</p>
+
+                  <button 
+                    className="btn-eliminar"
+                    onClick={function() { eliminarProducto(p.id) }}
+                  >
+                    <img src={iconoeliminar} alt="Eliminar" />
+                  </button>
+
                 </div>
-
-                <p>S/. {p.precio}</p>
-
-                <div className="cantidad">
-                  <button onClick={function() { disminuirCantidad(p.id) }}>-</button>
-                  <span>{p.cantidad}</span>
-                  <button onClick={function() { aumentarCantidad(p.id) }}>+</button>
-                </div>
-
-                <p>S/. {p.precio * p.cantidad}</p>
-
-                <button 
-                  className="btn-eliminar"
-                  onClick={function() { eliminarProducto(p.id) }}
-                >
-                  <img src={iconoeliminar} alt="Eliminar" />
-                </button>
-
-              </div>
-            );
-          })}
+              );
+            })
+          )}
 
           <div className="carrito-total">
             <strong>Total: S/. {calcularTotal()}</strong>

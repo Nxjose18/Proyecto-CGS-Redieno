@@ -4,14 +4,11 @@ import React, { createContext, useState } from "react";
 export const CarritoContext = createContext();
 
 function CarritoProvider(props) {
-
-  
   const [carrito, setCarrito] = useState([]);
 
 
   function agregarProducto(producto) {
     setCarrito(function(prev) {
-
       const existe = prev.find(function(p) {
         return p.nombre === producto.nombre;
       });
@@ -31,32 +28,35 @@ function CarritoProvider(props) {
 
 
   function aumentarCantidad(id) {
-    const nuevo = carrito.map(function(p) {
-      if (p.id === id) {
-        return { ...p, cantidad: p.cantidad + 1 };
-      }
-      return p;
+    setCarrito(function(prev) {
+      return prev.map(function(p) {
+        if (p.id === id) {
+          return { ...p, cantidad: p.cantidad + 1 };
+        }
+        return p;
+      });
     });
-    setCarrito(nuevo);
   }
 
 
   function disminuirCantidad(id) {
-    const nuevo = carrito.map(function(p) {
-      if (p.id === id && p.cantidad > 1) {
-        return { ...p, cantidad: p.cantidad - 1 };
-      }
-      return p;
+    setCarrito(function(prev) {
+      return prev.map(function(p) {
+        if (p.id === id && p.cantidad > 1) {
+          return { ...p, cantidad: p.cantidad - 1 };
+        }
+        return p;
+      });
     });
-    setCarrito(nuevo);
   }
 
 
   function eliminarProducto(id) {
-    const nuevo = carrito.filter(function(p) {
-      return p.id !== id;
+    setCarrito(function(prev) {
+      return prev.filter(function(p) {
+        return p.id !== id;
+      });
     });
-    setCarrito(nuevo);
   }
 
 

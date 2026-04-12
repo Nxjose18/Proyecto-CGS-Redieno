@@ -1,9 +1,11 @@
 
 import '../HojasDeEstilo/PaginaLista.css';
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import iconolista from '../Imagenes/icono-lista.png';
 import NavBar from '../Componentes/Nav-bar';
 import CartasPcGamer from '../Componentes/cartas-PcGamer';
+import { CarritoContext } from '../context/CarritoContext';
 import pcgamer1 from '../Imagenes/pcGamer-1.jpg';
 import pcgamer2 from '../Imagenes/pcGamer-2.jpg';
 import pcgamer3 from '../Imagenes/pcGamer-3.jpg';
@@ -11,6 +13,7 @@ function PaginaLista() {
   var [modalAbierto, setModalAbierto] = useState(false);
   var [productoSeleccionado, setProductoSeleccionado] = useState(null);
   var [cantidadModal, setCantidadModal] = useState(1);
+  const { agregarProducto } = useContext(CarritoContext);
 
   function aumentarCantidad() {
     setCantidadModal(cantidadModal + 1);
@@ -25,6 +28,23 @@ function PaginaLista() {
     setProductoSeleccionado(producto);
     setCantidadModal(1); 
     setModalAbierto(true);
+  }
+  
+  function agregarAlCarrito() {
+    const precioLimpio = Number(
+      String(productoSeleccionado.precio).replace("S/", "").trim()
+    );
+
+    const producto = {
+      id: Date.now(),
+      nombre: productoSeleccionado.titulo,
+      precio: precioLimpio,
+      cantidad: cantidadModal,
+      imagen: productoSeleccionado.imagen
+    };
+
+    agregarProducto(producto);
+    setModalAbierto(false);
   }
   var pcgamers = [
     {
@@ -190,7 +210,7 @@ function PaginaLista() {
                   <span>{cantidadModal}</span>
                   <button onClick={aumentarCantidad}>+</button>
 
-                  <button className="btn-carrito-modal">
+                  <button className="btn-carrito-modal" onClick={agregarAlCarrito}>
                     AÑADIR AL CARRO
                   </button>
                 </div>
