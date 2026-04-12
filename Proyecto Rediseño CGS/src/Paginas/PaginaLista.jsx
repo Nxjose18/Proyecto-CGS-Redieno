@@ -49,91 +49,91 @@ function PaginaLista() {
   var pcgamers = [
     {
       imagen: pcgamer1,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
+      titulo: "PC GAMER RYZEN 5 5600G 16GB RAM SSD 512GB",
+      precio: "S/ 2299",
       stock: 3,
-      etiquetas: ["Ryzen", "120Hz", "RXT"]
+      etiquetas: ["Ryzen 5", "16GB", "SSD"]
     },
     {
       imagen: pcgamer2,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Ryzen", "120Hz", "RXT"]
+      titulo: "PC GAMER INTEL I5 12400F RTX 4060 16GB",
+      precio: "S/ 3899",
+      stock: 2,
+      etiquetas: ["Intel i5", "RTX 4060", "16GB"]
 
     },
     {
       imagen: pcgamer3,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Ryzen", "120Hz", "RXT"]
+      titulo: "PC GAMER RYZEN 7 5700X RTX 4070 SUPER",
+      precio: "S/ 6299",
+      stock: 2,
+      etiquetas: ["Ryzen 7", "RTX 4070", "32GB"]
     },
     {
       imagen: pcgamer1,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Ryzen", "120Hz", "RXT"]
+      titulo: "PC GAMER RYZEN 5 8500G 16GB SSD 1TB",
+      precio: "S/ 2799",
+      stock: 4,
+      etiquetas: ["Ryzen 5", "1TB", "DDR5"]
 
     },
     {
       imagen: pcgamer2,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
+      titulo: "PC GAMER INTEL I7 12700KF RTX 4070 32GB",
+      precio: "S/ 5899",
       stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      etiquetas: ["Intel i7", "RTX 4070", "32GB"]
     },
     {
       imagen: pcgamer3,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC GAMER RYZEN 9 7900X RTX 4080 32GB",
+      precio: "S/ 8999",
+      stock: 1,
+      etiquetas: ["Ryzen 9", "RTX 4080", "32GB"]
     },
     {
       imagen: pcgamer1,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC STREAMER RYZEN 7 5800X RTX 4060 TI",
+      precio: "S/ 4699",
+      stock: 2,
+      etiquetas: ["Streamer", "RTX 4060 Ti", "32GB"]
     },
     {
       imagen: pcgamer2,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC GAMER INTEL I5 13400 RX 7600 16GB",
+      precio: "S/ 3599",
+      stock: 5,
+      etiquetas: ["Intel i5", "RX 7600", "16GB"]
     },
     {
       imagen: pcgamer3,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
+      titulo: "PC GAMER RYZEN 5 7600 RX 7700 XT 16GB",
+      precio: "S/ 5199",
       stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      etiquetas: ["Ryzen 5", "RX 7700 XT", "DDR5"]
 
     },
     {
       imagen: pcgamer1,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC OFICINA INTEL I3 12100 8GB SSD 256GB",
+      precio: "S/ 1699",
+      stock: 7,
+      etiquetas: ["Intel i3", "8GB", "SSD"]
 
     },
     {
       imagen: pcgamer2,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC DISEÑO RYZEN 7 7700 RTX 4060 32GB",
+      precio: "S/ 5499",
+      stock: 2,
+      etiquetas: ["Diseño", "RTX 4060", "32GB"]
     },
     {
       imagen: pcgamer3,
-      titulo: "Monitor Gamer Halion 27 2712F/Plano/IPS/120Hz/FHD",
-      precio: "S/ 3499",
-      stock: 3,
-      etiquetas: ["Intel", "130Hz", "RX"]
+      titulo: "PC GAMER INTEL I9 14900KF RTX 4090 64GB",
+      precio: "S/ 12999",
+      stock: 1,
+      etiquetas: ["Intel i9", "RTX 4090", "64GB"]
 
     }
   ];
