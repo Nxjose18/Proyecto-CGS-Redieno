@@ -1,11 +1,9 @@
-/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* HEADER GENERAL */
 .header {
   width: 100%;
   min-height: 138px;
@@ -15,27 +13,29 @@
   z-index: 1000;
 }
 
-/* BARRA SUPERIOR */
-.contenedor_descuento{
-  background-color: #395EF2;
+.contenedor_descuento {
+  background-color: #395ef2;
   display: flex;
   text-align: center;
 }
-.boton_descuento{
-    color: white;
-    width: 50%;
-    background-color: transparent;
-    border: none;
-    padding: 4px;
+
+.boton_descuento {
+  color: white;
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  padding: 4px;
 }
-.boton_descuento:hover{
-    background-color: #5d17ff;
-    cursor: pointer;
+
+.boton_descuento:hover {
+  background-color: #5d17ff;
+  cursor: pointer;
 }
-.boton_descuento:active{
-    background-color: #5c6cff;
+
+.boton_descuento:active {
+  background-color: #5c6cff;
 }
-/* CONTENEDOR PRINCIPAL */
+
 .contenedor-header {
   background-color: #2d2f37;
   display: flex;
@@ -44,7 +44,6 @@
   padding: 15px;
 }
 
-/* LOGO */
 .contenedor-logo {
   display: flex;
   align-items: center;
@@ -57,7 +56,6 @@
   object-fit: cover;
 }
 
-/* BUSCADOR */
 .contenedor-buscador {
   display: flex;
   width: 40%;
@@ -66,7 +64,7 @@
   overflow: hidden;
 }
 
-.input-buscador {
+.input_buscador {
   flex: 1;
   border: none;
   padding: 10px 15px;
@@ -74,7 +72,7 @@
   font-size: 14px;
 }
 
-.boton-buscar {
+.boton_buscar {
   background-color: #5c6cff;
   border: none;
   padding: 0 15px;
@@ -83,7 +81,6 @@
   font-size: 16px;
 }
 
-/* ACCIONES */
 .contenedor-acciones {
   display: flex;
   align-items: center;
@@ -100,24 +97,27 @@
   margin-right: 50px;
 }
 
+.accion_enlace {
+  text-decoration: none;
+}
+
 .icono {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
-.iconobuscar{
-    height: 30px;
-    width: 30px;
-    object-fit: contain;
+
+.icono_buscar {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
 }
 
-/* BARRA CATEGORÍAS */
-.barra-categorias {
-  background-color: #3C51A6;
+.barra_categorias {
+  background-color: #3c51a6;
 }
 
-
-.lista-categorias {
+.lista_categorias {
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -131,64 +131,57 @@
   transition: 0.3s;
 }
 
-.barra-categorias:hover {
+.barra_categorias:hover {
   background-color: #5d17ff;
 }
+
 .categoria:hover {
   color: #b9c7ff;
   transform: translateY(-2px);
 }
 
-
-.panel-carrito {
+.panel_carrito {
   position: absolute;
   right: 20px;
   top: 80px;
-
   width: 500px;
   background-color: #2d2f37;
   color: white;
-
   border-radius: 10px;
   padding: 15px;
   z-index: 2000;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* HEADER */
-.carrito-header {
+.carrito_header {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  background-color: #395EF2;
+  background-color: #395ef2;
   padding: 8px;
   border-radius: 5px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* ITEM */
-.carrito-item {
+.carrito_item {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
   margin-bottom: 10px;
 }
 
-/* INFO PRODUCTO */
-.producto-info {
+.producto_info {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.producto-info img {
+.producto_info img {
   width: 50px;
   height: 50px;
   object-fit: cover;
 }
 
-/* CANTIDAD */
 .cantidad {
   display: flex;
   align-items: center;
@@ -205,36 +198,40 @@
   border-radius: 5px;
 }
 
-/* ELIMINAR */
-.btn-eliminar {
+.btn_eliminar {
   background: none;
   border: none;
   cursor: pointer;
   color: red;
 }
-.btn-eliminar img {
+
+.btn_eliminar img {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
 
-/* TOTAL */
-.carrito-total {
+.carrito_total {
   margin-top: 10px;
   text-align: right;
 }
-.lista-categorias a {
+
+.carrito_vacio {
+  padding: 12px 0;
+}
+
+.lista_categorias a {
   text-decoration: none;
   color: inherit;
 }
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .contenedor-buscador {
     width: 50%;
   }
 
-  .barra-superior {
-    font-size: 12px;
-    padding: 5px 15px;
+  .panel_carrito {
+    width: calc(100% - 30px);
+    right: 15px;
   }
 }

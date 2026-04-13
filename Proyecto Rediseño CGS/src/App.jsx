@@ -3,6 +3,7 @@ import CarritoProvider from "./context/CarritoContext";
 import { Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./Paginas/PaginaPrincipal";
 import PaginaLista from "./Paginas/PaginaLista";
+import PaginaInicioSesion from "./Paginas/PaginaInicioSesion";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
         <Route 
           path="/carta" 
           element={<PaginaLista />} 
+        />
+
+        <Route 
+          path="/inicio_sesion" 
+          element={<PaginaInicioSesion />} 
         />
       </Routes>
       </CarritoProvider>

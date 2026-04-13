@@ -1,4 +1,3 @@
-
 import { HashLink as Link } from 'react-router-hash-link';
 import React, { useContext, useState } from 'react';
 import '../HojasDeEstilo/Nav-bar.css';
@@ -19,12 +18,9 @@ function NavBar() {
     calcularTotal
   } = useContext(CarritoContext);
 
-  
   return (
     <header className="header">
-
       <div className="contenedor-header">
-
         <div className="contenedor-logo">
           <img src={Logo} alt="logo" className="logo" />
         </div>
@@ -32,23 +28,21 @@ function NavBar() {
         <div className="contenedor-buscador">
           <input
             type="text"
-            placeholder="Busca tus productos aquí..."
-            className="input-buscador"
+            placeholder="Busca tus productos aqui..."
+            className="input_buscador"
           />
-          <button className="boton-buscar">
-            <img src={iconoBuscar} alt="buscar" className='iconobuscar'/>
+          <button className="boton_buscar">
+            <img src={iconoBuscar} alt="buscar" className="icono_buscar" />
           </button>
         </div>
 
         <div className="contenedor-acciones">
-          
-          <div className="accion">
-            <span>Iniciar Sesión</span>
+          <Link to="/inicio_sesion" className="accion accion_enlace">
+            <span>Iniciar Sesion</span>
             <img src={iconoUsuario} alt="usuario" className="icono" />
-          </div>
+          </Link>
 
-         
-          <div 
+          <div
             className="accion"
             onClick={function() {
               setMostrarCarrito(!mostrarCarrito);
@@ -58,15 +52,12 @@ function NavBar() {
             <img src={iconoCarrito} alt="carrito" className="icono" />
             <span>{carrito.length}</span>
           </div>
-
         </div>
       </div>
 
-      
       {mostrarCarrito && (
-        <div className="panel-carrito">
-
-          <div className="carrito-header">
+        <div className="panel_carrito">
+          <div className="carrito_header">
             <p>Producto</p>
             <p>Precio</p>
             <p>Cantidad</p>
@@ -74,13 +65,12 @@ function NavBar() {
           </div>
 
           {carrito.length === 0 ? (
-            <p className="carrito-vacio">Tu carrito está vacío.</p>
+            <p className="carrito_vacio">Tu carrito esta vacio.</p>
           ) : (
             carrito.map(function(p) {
               return (
-                <div key={p.id} className="carrito-item">
-
-                  <div className="producto-info">
+                <div key={p.id} className="carrito_item">
+                  <div className="producto_info">
                     <img src={p.imagen} alt={p.nombre} />
                     <span>{p.nombre}</span>
                   </div>
@@ -88,57 +78,51 @@ function NavBar() {
                   <p>S/. {p.precio}</p>
 
                   <div className="cantidad">
-                    <button onClick={function() { disminuirCantidad(p.id) }}>-</button>
+                    <button onClick={function() { disminuirCantidad(p.id); }}>-</button>
                     <span>{p.cantidad}</span>
-                    <button onClick={function() { aumentarCantidad(p.id) }}>+</button>
+                    <button onClick={function() { aumentarCantidad(p.id); }}>+</button>
                   </div>
 
                   <p>S/. {p.precio * p.cantidad}</p>
 
-                  <button 
-                    className="btn-eliminar"
-                    onClick={function() { eliminarProducto(p.id) }}
+                  <button
+                    className="btn_eliminar"
+                    onClick={function() { eliminarProducto(p.id); }}
                   >
                     <img src={iconoeliminar} alt="Eliminar" />
                   </button>
-
                 </div>
               );
             })
           )}
 
-          <div className="carrito-total">
+          <div className="carrito_total">
             <strong>Total: S/. {calcularTotal()}</strong>
           </div>
-
         </div>
       )}
 
-
-      <div className="barra-categorias">
-        <ul className="lista-categorias">
+      <div className="barra_categorias">
+        <ul className="lista_categorias">
           <li className="categoria">
             <Link smooth to="/#CatalogoProductos">Ofertas</Link>
-          </li>          
+          </li>
           <li className="categoria">
             <Link smooth to="/#CatalogoProductos">Catalogo</Link>
-          </li>          
+          </li>
           <li className="categoria">
             <Link to="/carta">PC Gamer</Link>
           </li>
           <li className="categoria">
             <Link to="/carta">PC Oficina</Link>
           </li>
-
         </ul>
       </div>
 
-
       <div className="contenedor_descuento">
-        <button className='boton_descuento'>TOP 30% DE DESCUENTO EN</button>
-        <button className='boton_descuento'>TOP 30% DE DESCUENTO EN</button>
+        <button className="boton_descuento">TOP 30% DE DESCUENTO EN</button>
+        <button className="boton_descuento">TOP 30% DE DESCUENTO EN</button>
       </div>
-
     </header>
   );
 }
