@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import '../HojasDeEstilo/PaginaInicioSesion.css';
 
 function PaginaInicioSesion() {
-  const [usuario, setUsuario] = useState('kminchelle');
-  const [contrasena, setContrasena] = useState('0lelplR');
+  const [usuario, setUsuario] = useState('emilys');
+  const [contrasena, setContrasena] = useState('emilyspass');
   const [cargando, setCargando] = useState(false);
   const [mensaje_error, setMensajeError] = useState('');
   const [datos_usuario, setDatosUsuario] = useState(null);
@@ -21,9 +21,11 @@ function PaginaInicioSesion() {
         headers: {
           'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({
           username: usuario,
-          password: contrasena
+          password: contrasena,
+          expiresInMins: 30
         })
       });
 
@@ -55,8 +57,8 @@ function PaginaInicioSesion() {
         </div>
 
         <div className="credenciales_prueba">
-          <p><strong>Usuario:</strong> kminchelle</p>
-          <p><strong>Clave:</strong> 0lelplR</p>
+          <p><strong>Usuario:</strong> emilys</p>
+          <p><strong>Clave:</strong> emilyspass</p>
         </div>
 
         <form className="formulario_inicio_sesion" onSubmit={iniciarSesion}>
