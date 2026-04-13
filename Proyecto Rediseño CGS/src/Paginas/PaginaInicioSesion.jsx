@@ -49,7 +49,7 @@ function PaginaInicioSesion() {
     <main className="pagina_inicio_sesion">
       <section className="contenedor_inicio_sesion">
         <div className="cabecera_inicio_sesion">
-          <p className="texto_pequeno">API de prueba para la rubrica</p>
+          <p className="texto_pequeno">API</p>
           <h1>Inicio de sesion</h1>
           <p className="texto_ayuda">
             Este formulario consume la API DummyJSON para simular un login.

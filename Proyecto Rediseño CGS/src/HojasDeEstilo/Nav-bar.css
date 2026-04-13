@@ -168,12 +168,17 @@
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
   margin-bottom: 10px;
+  gap: 15px;
 }
 
 .producto_info {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.producto_info span {
+  font-size: 11px;
 }
 
 .producto_info img {
