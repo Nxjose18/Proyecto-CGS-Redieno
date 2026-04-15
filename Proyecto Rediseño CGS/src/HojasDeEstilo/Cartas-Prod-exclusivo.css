@@ -1,6 +1,6 @@
 .carta_producto{
   width: 100%;
-  height: clamp(170px, 38vh, 400px);
+  height: clamp(170px, 50vh, 470px);
   justify-content: center;
   align-items: center;
   background-color: #cfd3e6;
@@ -40,6 +40,7 @@
     height: 100%;
     display: block;
 }
+
 
 /* ETIQUETAS LATERALES */
 .etiquetas_Pexclusivo {

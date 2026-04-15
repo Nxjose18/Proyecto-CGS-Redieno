@@ -45,7 +45,7 @@ function CartaProductosExclusivos(props) {
                 });
               }}
             >
-          <img src={props.imagen} alt="producto" />
+          <img className='img_prod' src={props.imagen} alt="producto" />
 
           <div className="etiquetas_Pexclusivo">
             {props.etiquetas.map(function(item, index) {
