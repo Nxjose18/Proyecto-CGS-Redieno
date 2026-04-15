@@ -9,6 +9,10 @@ import { CarritoContext } from '../context/CarritoContext';
 import pcgamer1 from '../Imagenes/pcGamer-1.jpg';
 import pcgamer2 from '../Imagenes/pcGamer-2.jpg';
 import pcgamer3 from '../Imagenes/pcGamer-3.jpg';
+import imgprod1 from '../Imagenes/img_prod1.jpg';
+import imgprod2 from '../Imagenes/img_prod2.jpg';
+import imgprod3 from '../Imagenes/img_prod3.jpg';
+import imgprod4 from '../Imagenes/img_prod4.jpg';
 function PaginaLista() {
   var [modalAbierto, setModalAbierto] = useState(false);
   var [productoSeleccionado, setProductoSeleccionado] = useState(null);

@@ -62,35 +62,35 @@ function PaginaPrincipal() {
   ];
     var productos = [
     {
-      imagen: monitor,
+      imagen: imgprod1,
       descripcion: "MONITOR GAMER HALION 27 2712F PLANO IPS 120HZ FHD",
       precio: 3499,
       stock: 3,
       etiquetas: ["1ms", "120Hz", "1000R"]
     },
     {
-      imagen: monitor,
+      imagen: imgprod2,
       descripcion: "MONITOR LG ULTRAGEAR 24GN60R IPS 144HZ FHD",
       precio: 1199,
       stock: 6,
       etiquetas: ["144Hz", "IPS", "1ms"]
     },
     {
-      imagen: monitor,
-      descripcion: "MONITOR SAMSUNG ODYSSEY G5 27 CURVO QHD",
+      imagen: imgprod3,
+      descripcion: "PROCESADOR INTEL CORE I5 14400",
       precio: 1599,
       stock: 4,
       etiquetas: ["165Hz", "QHD", "Curvo"]
     },
     {
-      imagen: monitor,
-      descripcion: "MONITOR ASUS TUF VG249Q3A 24 IPS 180HZ",
+      imagen: imgprod4,
+      descripcion: "DISCO SOLIDO WESTERN DIGITAL GREEN SN3000 500GB M.2 5000MBS/s",
       precio: 999,
       stock: 8,
       etiquetas: ["180Hz", "FreeSync", "IPS"]
     },
     {
-      imagen: monitor,
+      imagen: imgprod1,
       descripcion: "MONITOR TEROS TE 2715S 27 FHD PARA OFICINA",
       precio: 699,
       stock: 5,
@@ -99,43 +99,43 @@ function PaginaPrincipal() {
   ];
   var ofertas = [
     {
-      imagen: monitor,
+      imagen: imgprod2,
       descripcion: "MONITOR AOC 24G2SP GAMER EN OFERTA",
       precio: 1999,
       stock: 2,
       etiquetas: ["OFERTA", "120Hz"]
     },
     {
-      imagen: monitor,
-      descripcion: "MONITOR MSI G244F E2 24 IPS EN OFERTA",
+      imagen: imgprod3,
+      descripcion: "PROCESADOR INTEL CORE I5 14400",
       precio: 879,
       stock: 4,
       etiquetas: ["Oferta", "180Hz", "IPS"]
     },
     {
-      imagen: monitor,
-      descripcion: "MONITOR VIEWSONIC VX2428 FHD EN OFERTA",
+      imagen: imgprod4,
+      descripcion: "DISCO SOLIDO WESTERN DIGITAL GREEN SN3000 500GB M.2 5000MBS/s",
       precio: 829,
       stock: 3,
       etiquetas: ["Oferta", "165Hz", "1ms"]
     },
     {
-      imagen: monitor,
+      imagen: imgprod1,
       descripcion: "MONITOR HP X27Q QHD 165HZ EN OFERTA",
       precio: 1399,
       stock: 2,
       etiquetas: ["Oferta", "QHD", "165Hz"]
     },
     {
-      imagen: monitor,
+      imagen: imgprod2,
       descripcion: "MONITOR LENOVO G27C 27 CURVO EN OFERTA",
       precio: 1099,
       stock: 5,
       etiquetas: ["Oferta", "Curvo", "165Hz"]
     },
     {
-      imagen: monitor,
-      descripcion: "MONITOR ACER NITRO KG241Y GAMER EN OFERTA",
+      imagen: imgprod3,
+      descripcion: "PROCESADOR INTEL CORE I5 14400",
       precio: 759,
       stock: 6,
       etiquetas: ["Oferta", "165Hz", "AMD"]
